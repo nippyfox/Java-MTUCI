@@ -12,7 +12,7 @@ public class Palindrome {
         }
     }
 
-    public static String reverseString(String s) {
+    public static String reverseString(String s) { // Reverse stirng
         String result = "";
         for (int i = s.length() - 1; i >= 0; i--) {
             result += s.charAt(i);
@@ -20,7 +20,7 @@ public class Palindrome {
         return result;
     }
 
-    public static boolean isPalindrome(String s) {
+    public static boolean isPalindrome(String s) { // Checking if word is palindrome
         return s.equals(reverseString(s));
     }
 }
