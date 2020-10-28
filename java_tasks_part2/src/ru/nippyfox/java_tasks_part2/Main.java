@@ -7,9 +7,10 @@ public class Main {
 
     public static String repeat(String s, int n) { // 2.1
         String sum = "";
-        for (char l: s.toCharArray()) {
-            for (int j = 1; j <= n; j++) {
-                sum += j;
+        char[] arr = s.toCharArray();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < n; j++) {
+                sum += arr[i];
             }
         }
         return sum;

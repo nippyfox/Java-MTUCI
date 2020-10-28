@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6f630984-e543-486c-9720-81bf626fba5f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/nippyfox/java_tasks_part1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/nippyfox/java_tasks_part1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java_tasks_part1/ru/nippyfox/java_tasks_part1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java_tasks_part1/ru/nippyfox/java_tasks_part1/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +21,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../java_tasks_part2" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -84,26 +84,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603880815103" />
-    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1603831005663">
+    <state x="549" y="154" key="FileChooserDialogImpl" timestamp="1603882499182">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603831005663" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1602675973327">
+    <state x="549" y="154" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1603882499182" />
+    <state width="724" height="210" key="GridCell.Tab.0.bottom" timestamp="1603882500821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602675973327" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1602675973327">
+    <state width="724" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603882500821" />
+    <state width="724" height="210" key="GridCell.Tab.0.center" timestamp="1603882500821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602675973327" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1602675973326">
+    <state width="724" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603882500821" />
+    <state width="724" height="210" key="GridCell.Tab.0.left" timestamp="1603882500821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602675973326" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1602675973327">
+    <state width="724" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603882500821" />
+    <state width="724" height="210" key="GridCell.Tab.0.right" timestamp="1603882500821">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602675973327" />
+    <state width="724" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603882500821" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1602675706154">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
