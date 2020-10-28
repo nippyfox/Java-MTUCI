@@ -83,6 +83,7 @@ public class Main {
                 System.out.println("Введите b:");
                 int b1 = in.nextInt();
                 System.out.println("Результат: " + remainder(a1, b1));
+                break;
             case 2:
                 System.out.println("triArea()");
                 System.out.println("Введите a:");
@@ -90,6 +91,7 @@ public class Main {
                 System.out.println("Введите b:");
                 int b2 = in.nextInt();
                 System.out.println("Результат: " + triArea(a2, b2));
+                break;
             case 3:
                 System.out.println("animals()");
                 System.out.println("Введите a:");
@@ -99,6 +101,7 @@ public class Main {
                 System.out.println("Введите c:");
                 int c3 = in.nextInt();
                 System.out.println("Результат: " + animals(a3, b3, c3));
+                break;
             case 4:
                 System.out.println("profitableGamble()");
                 System.out.println("Введите a:");
@@ -108,6 +111,7 @@ public class Main {
                 System.out.println("Введите c:");
                 int c4 = in.nextInt();
                 System.out.println("Результат: " + profitableGamble(a4, b4, c4));
+                break;
             case 5:
                 System.out.println("operation()");
                 System.out.println("Введите N:");
@@ -117,6 +121,7 @@ public class Main {
                 System.out.println("Введите b:");
                 int b5 = in.nextInt();
                 System.out.println("Результат: " + operation(N5, a5, b5));
+                break;
             case 6:
                 Scanner sc = new Scanner(System.in);
                 System.out.println("ctoa()");
@@ -124,11 +129,13 @@ public class Main {
                 String a6 = sc.nextLine();
                 char b6 = a6.charAt(0);
                 System.out.println("Результат: " + ctoa(b6));
+                break;
             case 7:
                 System.out.println("addUpTo()");
                 System.out.println("Введите N:");
                 int n7 = in.nextInt();
                 System.out.println("Результат: " + addUpTo(n7));
+                break;
             case 8:
                 System.out.println("nextEdge()");
                 System.out.println("Введите a:");
@@ -136,6 +143,7 @@ public class Main {
                 System.out.println("Введите b:");
                 int b8 = in.nextInt();
                 System.out.println("Результат: " + nextEdge(a8, b8));
+                break;
             case 9:
                 System.out.println("sumOfCubes()");
                 System.out.println("Сколько элементов будет в массиве?");
@@ -146,6 +154,7 @@ public class Main {
                     array9[i] = in.nextInt();
                 }
                 System.out.println("Результат: " + sumOfCubes(array9));
+                break;
             case 10:
                 System.out.println("abcmath()");
                 System.out.println("Введите a:");
@@ -155,6 +164,7 @@ public class Main {
                 System.out.println("Введите c:");
                 int c10 = in.nextInt();
                 System.out.println("Результат: " + abcmath(a10, b10, c10));
+                break;
         }
     }
 }
