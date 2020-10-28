@@ -149,7 +149,7 @@ public class Main {
                 System.out.println("Сколько элементов будет в массиве?");
                 int n9 = in.nextInt();
                 int[] array9 = new int[n9];
-                for (int i : array9) {
+                for (int i = 0; i < n9; i++) {
                     System.out.println("Введите " + i + " элемент массива:");
                     array9[i] = in.nextInt();
                 }
