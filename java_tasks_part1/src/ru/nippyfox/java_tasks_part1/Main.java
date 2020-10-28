@@ -76,23 +76,23 @@ public class Main {
         System.out.println("Введите номер задачи (от 1 до 10):");
         int n = in.nextInt();
         switch (n) {
-            case 1:
+            case 1 -> {
                 System.out.println("remainder()");
                 System.out.println("Введите a:");
                 int a1 = in.nextInt();
                 System.out.println("Введите b:");
                 int b1 = in.nextInt();
                 System.out.println("Результат: " + remainder(a1, b1));
-                break;
-            case 2:
+            }
+            case 2 -> {
                 System.out.println("triArea()");
                 System.out.println("Введите a:");
                 int a2 = in.nextInt();
                 System.out.println("Введите b:");
                 int b2 = in.nextInt();
                 System.out.println("Результат: " + triArea(a2, b2));
-                break;
-            case 3:
+            }
+            case 3 -> {
                 System.out.println("animals()");
                 System.out.println("Введите a:");
                 int a3 = in.nextInt();
@@ -101,8 +101,8 @@ public class Main {
                 System.out.println("Введите c:");
                 int c3 = in.nextInt();
                 System.out.println("Результат: " + animals(a3, b3, c3));
-                break;
-            case 4:
+            }
+            case 4 -> {
                 System.out.println("profitableGamble()");
                 System.out.println("Введите a:");
                 double a4 = in.nextDouble();
@@ -111,8 +111,8 @@ public class Main {
                 System.out.println("Введите c:");
                 int c4 = in.nextInt();
                 System.out.println("Результат: " + profitableGamble(a4, b4, c4));
-                break;
-            case 5:
+            }
+            case 5 -> {
                 System.out.println("operation()");
                 System.out.println("Введите N:");
                 int N5 = in.nextInt();
@@ -121,30 +121,30 @@ public class Main {
                 System.out.println("Введите b:");
                 int b5 = in.nextInt();
                 System.out.println("Результат: " + operation(N5, a5, b5));
-                break;
-            case 6:
+            }
+            case 6 -> {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("ctoa()");
                 System.out.println("Введите символ:");
                 String a6 = sc.nextLine();
                 char b6 = a6.charAt(0);
                 System.out.println("Результат: " + ctoa(b6));
-                break;
-            case 7:
+            }
+            case 7 -> {
                 System.out.println("addUpTo()");
                 System.out.println("Введите N:");
                 int n7 = in.nextInt();
                 System.out.println("Результат: " + addUpTo(n7));
-                break;
-            case 8:
+            }
+            case 8 -> {
                 System.out.println("nextEdge()");
                 System.out.println("Введите a:");
                 int a8 = in.nextInt();
                 System.out.println("Введите b:");
                 int b8 = in.nextInt();
                 System.out.println("Результат: " + nextEdge(a8, b8));
-                break;
-            case 9:
+            }
+            case 9 -> {
                 System.out.println("sumOfCubes()");
                 System.out.println("Сколько элементов будет в массиве?");
                 int n9 = in.nextInt();
@@ -154,8 +154,8 @@ public class Main {
                     array9[i] = in.nextInt();
                 }
                 System.out.println("Результат: " + sumOfCubes(array9));
-                break;
-            case 10:
+            }
+            case 10 -> {
                 System.out.println("abcmath()");
                 System.out.println("Введите a:");
                 int a10 = in.nextInt();
@@ -164,7 +164,7 @@ public class Main {
                 System.out.println("Введите c:");
                 int c10 = in.nextInt();
                 System.out.println("Результат: " + abcmath(a10, b10, c10));
-                break;
+            }
         }
     }
 }
