@@ -8,9 +8,9 @@ public class Main {
     public static String repeat(String s, int n) { // 2.1
         String sum = "";
         char[] arr = s.toCharArray();
-        for (int i = 0; i < arr.length; i++) {
+        for (char i: arr) {
             for (int j = 0; j < n; j++) {
-                sum += arr[i];
+                sum += i;
             }
         }
         return sum;
@@ -134,7 +134,7 @@ public class Main {
         System.out.println("Введите номер задачи (от 11 до 20):");
         int n = in.nextInt();
         switch (n) {
-            case 11:
+            case 11 -> {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("repeat()");
                 System.out.println("Введите слово:");
@@ -142,8 +142,8 @@ public class Main {
                 System.out.println("Введите n:");
                 int b1 = in.nextInt();
                 System.out.println("Результат: " + repeat(a1, b1));
-                break;
-            case 12:
+            }
+            case 12 -> {
                 System.out.println("differenceMaxMin()");
                 System.out.println("Сколько элементов содержит массив?");
                 int a2 = in.nextInt();
@@ -153,8 +153,8 @@ public class Main {
                     b2[i] = in.nextInt();
                 }
                 System.out.println("Результат: " + differenceMaxMin(b2));
-                break;
-            case 13:
+            }
+            case 13 -> {
                 System.out.println("isAvgWhole()");
                 System.out.println("Сколько элементов содержит массив?");
                 int a3 = in.nextInt();
@@ -164,8 +164,8 @@ public class Main {
                     b3[i] = in.nextInt();
                 }
                 System.out.println("Результат: " + isAvgWhole(b3));
-                break;
-            case 14:
+            }
+            case 14 -> {
                 System.out.println("cumulativeSum()");
                 System.out.println("Сколько элементов содержит массив?");
                 int a4 = in.nextInt();
@@ -176,30 +176,30 @@ public class Main {
                 }
                 int[] c4 = cumulativeSum(b4);
                 System.out.print("Результат:");
-                for (int i: c4) {
+                for (int i : c4) {
                     System.out.print(" " + i);
                 }
-                break;
-            case 15:
+            }
+            case 15 -> {
                 Scanner sc2 = new Scanner(System.in);
                 System.out.println("getDecimalPlaces()");
                 String a5 = sc2.nextLine();
                 System.out.println("Результат: " + getDecimalPlaces(a5));
-                break;
-            case 16:
+            }
+            case 16 -> {
                 System.out.println("Fibonacci()");
                 System.out.println("Введите число:");
                 int a6 = in.nextInt();
                 System.out.println("Результат: " + Fibonacci(a6));
-                break;
-            case 17:
+            }
+            case 17 -> {
                 Scanner sc3 = new Scanner(System.in);
                 System.out.println("isValid()");
                 System.out.println("Введите N:");
                 String a7 = sc3.nextLine();
                 System.out.println("Результат: " + isValid(a7));
-                break;
-            case 18:
+            }
+            case 18 -> {
                 Scanner sc4 = new Scanner(System.in);
                 System.out.println("isStrangePair()");
                 System.out.println("Введите первую строку:");
@@ -207,8 +207,8 @@ public class Main {
                 System.out.println("Введите вторую строку:");
                 String b8 = sc4.nextLine();
                 System.out.println("Результат: " + isStrangePair(a8, b8));
-                break;
-            case 19:
+            }
+            case 19 -> {
                 Scanner sc5 = new Scanner(System.in);
                 System.out.println("isPrefix(), isSuffix()");
                 System.out.println("Введите строку:");
@@ -217,13 +217,13 @@ public class Main {
                 String b9 = sc5.nextLine();
                 System.out.println("Результат isPrefix(): " + isPrefix(a9, b9));
                 System.out.println("Результат isSuffix(): " + isSuffix(a9, b9));
-                break;
-            case 20:
+            }
+            case 20 -> {
                 System.out.println("boxSeq()");
                 System.out.println("Введите число (шаг):");
                 int a10 = in.nextInt();
                 System.out.println("Результат: " + boxSeq(a10));
-                break;
+            }
         }
     }
 }
