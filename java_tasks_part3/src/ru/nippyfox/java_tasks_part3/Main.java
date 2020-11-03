@@ -128,9 +128,15 @@ public class Main {
         String strSqrt = String.valueOf(sec);
         String strFirst = strSqrt.substring(0, strSqrt.length() / 2);
         String strSec = strSqrt.substring(strSqrt.length() / 2);
-        int intFirst = Integer.parseInt(strFirst); // TODO not work if length = 0.
-        int intSec = Integer.parseInt(strSec);
-        return intFirst + intSec == a;
+        if (strFirst.length() == 0) {
+            int intSec = Integer.parseInt(strSec);
+            return intSec == a;
+        }
+        else {
+            int intFirst = Integer.parseInt(strFirst);
+            int intSec = Integer.parseInt(strSec);
+            return intFirst + intSec == a;
+        }
     }
 
     public static void main(String[] args) {
