@@ -195,9 +195,9 @@ public class Main {
     }
 
     public static boolean rightTriangle(int a, int b, int c) { // 3.10
-        int maxValue = 0;
-        int firstValue = 0;
-        int secondValue = 0;
+        int maxValue;
+        int firstValue;
+        int secondValue;
         if (a > b && a > c) {
             maxValue = a;
             firstValue = b;
