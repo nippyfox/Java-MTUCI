@@ -138,6 +138,86 @@ public class Main {
             return intFirst + intSec == a;
         }
     }
+    
+    public static String longestZero(String a) { // 3.8
+        boolean checkNumbers = true;
+        char[] aArray = a.toCharArray();
+        for (char i : aArray) {
+            if (!(i == (int) '0' || i == (int) '1')) {
+                checkNumbers = false;
+                break;
+            }
+        }
+        if (!checkNumbers) {
+            return "В строке содержатся другие символы, помимо 0 и 1";
+        }
+        else {
+            int x = Integer.parseInt(a,2);
+            long count = 0, maxZero = 0;
+            while (x > 0) {
+                if ((x & 1) == 1) {
+                    if (count > maxZero) {
+                        maxZero = count;
+                    }
+                    count = 0;
+                }
+                else {
+                    count += 1;
+                }
+                x = x >> 1;
+            }
+            String result = "";
+            for (int i = 0; i < maxZero; i++) {
+                result += "0";
+            }
+            return result;
+        }
+    }
+
+    public static boolean isPrime(int n) { // 3.9
+        boolean result = true;
+        for (int i = 2; i < n; i++) {
+            if (n % i == 0) {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static int nextPrime(int a) {
+        while (true) {
+            if (isPrime(a)) {
+                return a;
+            }
+            a++;
+        }
+    }
+
+    public static boolean rightTriangle(int a, int b, int c) { // 3.10
+        int maxValue = 0;
+        int firstValue = 0;
+        int secondValue = 0;
+        if (a > b && a > c) {
+            maxValue = a;
+            firstValue = b;
+            secondValue = c;
+        }
+        else if (b > a && b > c) {
+            maxValue = b;
+            firstValue = a;
+            secondValue = c;
+        }
+        else if (c > a && c > b) {
+            maxValue = c;
+            firstValue = a;
+            secondValue = b;
+        }
+        else {
+            return false;
+        }
+        return maxValue * maxValue == firstValue * firstValue + secondValue * secondValue;
+    }
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -203,6 +283,27 @@ public class Main {
                 System.out.println("isKaprekar()");
                 int n7 = in.nextInt();
                 System.out.println("Результат: " + isKaprekar(n7));
+            }
+            case 28 -> {
+                Scanner sc4 = new Scanner(System.in);
+                System.out.println("longestZero()");
+                String a8 = sc4.nextLine();
+                System.out.println("Результат: " + longestZero(a8));
+            }
+            case 29 -> {
+                System.out.println("nextPrime()");
+                int n9 = in.nextInt();
+                System.out.println("Результат: " + nextPrime(n9));
+            }
+            case 30 -> {
+                System.out.println("rightTriangle()");
+                System.out.println("Введите a:");
+                int a10 = in.nextInt();
+                System.out.println("Введите b:");
+                int b10 = in.nextInt();
+                System.out.println("Введите c:");
+                int c10 = in.nextInt();
+                System.out.println("Результат: " + rightTriangle(a10, b10, c10));
             }
         }
     }
