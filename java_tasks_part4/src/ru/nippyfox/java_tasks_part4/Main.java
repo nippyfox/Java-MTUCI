@@ -110,6 +110,37 @@ public class Main {
         return "$" + res;
     }
 
+    public static String BMI(String a, String b) { // TODO 4.5
+        int weight, height;
+        if (a.contains("kilos")) {
+            weight = 0;
+        }
+        else if (a.contains("pounds")) {
+            height = 0;
+        }
+        else {
+            return "Некорректный ввод";
+        }
+        return "0";
+    }
+
+    public static int bugger(int a) { // 4.6
+        int count = 0;
+        while (a >= 10) {
+            int mlt = 1, mod;
+            while (a != 0) {
+                mod = a % 10;
+                mlt *= mod;
+                a = a / 10;
+            }
+            a = mlt;
+            count++;
+        }
+        return count;
+    }
+
+
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
         Scanner sc = new Scanner(System.in);
@@ -163,6 +194,12 @@ public class Main {
                 System.out.println("Введите множитель сверхурочных работ:");
                 a4[3] = in.nextFloat();
                 System.out.println("Результат: " + overTime(a4));
+            }
+            // TODO 35
+            case 36 -> {
+                System.out.println("bugger()");
+                int a6 = in.nextInt();
+                System.out.println("Результат: " + bugger(a6));
             }
         }
     }
