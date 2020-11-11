@@ -59,8 +59,59 @@ public class Main {
         return resArray;
     }
 
+    public static String toCamelCase(String a) { // 4.3
+        while (a.contains("_")) {
+            int find = a.indexOf("_");
+            if (find == 0) {
+                a = a.substring(1);
+            }
+            else if (find < a.length() - 2) {
+                a = a.substring(0, find) + a.substring(find+1, find + 2).toUpperCase() + a.substring(find + 2);
+            }
+            else if (find < a.length() - 1) {
+                a = a.substring(0, find) + a.substring(find+1, find + 2).toUpperCase();
+            }
+            else if (find < a.length()) {
+                a = a.substring(0, find);
+            }
+        }
+        return a;
+    }
+
+    public static String toSnakeCase(String a) {
+        for (int i = 0; i < a.length(); i++) {
+            if (a.charAt(i) >= 'A' && a.charAt(i) <= 'Z') {
+                if (i == 0) {
+                    a = a.substring(0, 1).toLowerCase() + a.substring(1);
+                }
+                else if (i < a.length() - 1) {
+                    a = a.substring(0, i) + "_" + a.substring(i, i + 1).toLowerCase() + a.substring(i + 1);
+                }
+                else {
+                    a = a.substring(0, i) + "_" + a.substring(i).toLowerCase();
+                }
+            }
+        }
+        return a;
+    }
+
+    public static String overTime(float[] array) { // 4.4
+        float overtimeMorning = 0.0f, overtime = 0.0f;
+        if (array[0] < 9) {
+            overtimeMorning = 9.0f - array[0];
+        }
+        if (array[1] > 17) {
+            overtime = (array[1] - 17.0f) + overtimeMorning;
+        }
+        float result = (array[1] - array[0] - overtime) * array[2] + overtime * array[2] * array[3];
+        String res = String.valueOf(result);
+        res += "00";
+        res = res.substring(0, res.indexOf(".") + 3);
+        return "$" + res;
+    }
+
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
         Scanner sc = new Scanner(System.in);
         System.out.println("Введите номер задачи (от 31 до 40):");
         int n = in.nextInt();
@@ -86,8 +137,32 @@ public class Main {
                 }
             }
             case 33 -> {
-                System.out.println("toCamelCase()");
-                System.out.println("toSnakeCase()");
+                System.out.println("toCamelCase() - 1");
+                System.out.println("toSnakeCase() - 2");
+                int n3 = in.nextInt();
+                if (n3 == 1) {
+                    System.out.println("toCamelCase()");
+                    String a3 = sc.nextLine();
+                    System.out.println("Результат: " + toCamelCase(a3));
+                }
+                else if (n3 == 2) {
+                    System.out.println("toSnakeCase()");
+                    String a3 = sc.nextLine();
+                    System.out.println("Результат: " + toSnakeCase(a3));
+                }
+            }
+            case 34 -> {
+                System.out.println("overTime()");
+                float[] a4 = new float[4];
+                System.out.println("Введите начало рабочего дня:");
+                a4[0] = in.nextFloat();
+                System.out.println("Введите конец рабочего дня:");
+                a4[1] = in.nextFloat();
+                System.out.println("Введите почасовую ставку:");
+                a4[2] = in.nextFloat();
+                System.out.println("Введите множитель сверхурочных работ:");
+                a4[3] = in.nextFloat();
+                System.out.println("Результат: " + overTime(a4));
             }
         }
     }
