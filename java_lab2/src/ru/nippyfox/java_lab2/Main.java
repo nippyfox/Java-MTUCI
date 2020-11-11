@@ -40,7 +40,13 @@ public class Main {
             System.out.print("Вы ввели несколько идентичных точек");
         }
         else {
-            System.out.print("Площадь треугольника по трем вашим точкам: " + computeArea(point1, point2, point3));
+            double res = computeArea(point1, point2, point3);
+            if (Double.isNaN(res)) {
+                System.out.println("Такого треугольника не существует");
+            }
+            else {
+                System.out.println("Площадь треугольника равна " + res);
+            }
         }
     }
 }
