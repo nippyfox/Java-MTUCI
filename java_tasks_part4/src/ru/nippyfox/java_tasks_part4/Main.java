@@ -110,18 +110,46 @@ public class Main {
         return "$" + res;
     }
 
-    public static String BMI(String a, String b) { // TODO 4.5
-        int weight, height;
-        if (a.contains("kilos")) {
-            weight = 0;
+    public static String BMI(String a, String b) { // 4.5
+        a = a.trim();
+        b = b.trim();
+        int indexA = a.indexOf(' ');
+        int indexB = b.indexOf(' ');
+        String weightStr = a.substring(0, indexA);
+        String weightStep = a.substring(indexB + 1);
+        String heightStr = b.substring(0, indexB);
+        String heightStep = b.substring(indexB + 1);
+        float weight = Float.parseFloat(weightStr);
+        float height = Float.parseFloat(heightStr);
+        if (weightStep.contains("pounds")) {
+            weight /= (2.205f);
         }
-        else if (a.contains("pounds")) {
-            height = 0;
+        if (heightStep.contains("inches")) {
+            height /= (39.37f);
         }
-        else {
+        if (!(weightStep.contains("kilos") || weightStep.contains("pounds"))) {
             return "Некорректный ввод";
         }
-        return "0";
+        else if (!(heightStep.contains("meters") || heightStep.contains("inches"))) {
+            return "Некорректный ввод";
+        }
+        else {
+            String resConclusion;
+            double bmi = weight / (height * height);
+            if (bmi < 18.5) {
+                resConclusion = " Недостаточный вес";
+            }
+            else if (bmi < 25) {
+                resConclusion = " Нормальный вес";
+            }
+            else {
+                resConclusion = " Избыточный вес";
+            }
+            String res = String.valueOf(bmi);
+            res += "00";
+            res = res.substring(0, res.indexOf(".") + 2);
+            return res + resConclusion;
+        }
     }
 
     public static int bugger(int a) { // 4.6
@@ -138,8 +166,6 @@ public class Main {
         }
         return count;
     }
-
-
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
@@ -195,7 +221,14 @@ public class Main {
                 a4[3] = in.nextFloat();
                 System.out.println("Результат: " + overTime(a4));
             }
-            // TODO 35
+            case 35 -> {
+                System.out.println("BMI()");
+                System.out.println("Введите вес:");
+                String a5 = sc.nextLine();
+                System.out.println("Введите рост:");
+                String b5 = sc.nextLine();
+                System.out.println("Результат: " + BMI(a5, b5));
+            }
             case 36 -> {
                 System.out.println("bugger()");
                 int a6 = in.nextInt();
