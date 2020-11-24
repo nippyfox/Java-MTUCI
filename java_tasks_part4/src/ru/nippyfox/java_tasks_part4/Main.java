@@ -167,6 +167,118 @@ public class Main {
         return count;
     }
 
+    public static String toStarShorthand(String a) { // 4.7
+        int i = 1, count = 1;
+        String res = "";
+        while (i < a.length()) {
+            if (a.charAt(i) == a.charAt(i - 1)) {
+                count++;
+                if (a.length() - 1 == 1){
+                    res += a.charAt(i) + "*" + count;
+                    break;
+                }
+                else
+                    i++;
+            }
+            else {
+                if (count == 1) {
+                    res += a.charAt(i - 1);
+                    if (i == a.length() - 1) {
+                        res += a.charAt(i);
+                    }
+                }
+                else {
+                    res += a.charAt(i - 1) + "*" + count;
+                }
+                count = 1;
+                i++;
+            }
+        }
+        return res;
+    }
+
+    public static boolean doesRhyme(String s, String s2) { // 4.8
+        String c = "";
+        String k = "";
+        int a = s.lastIndexOf(" ");
+        int b = s2.lastIndexOf(" ");
+        String subs = s.substring(a);
+        String subs2 = s2.substring(b);
+        for (char l:subs.toCharArray()) {
+            if ((l=='a')||(l=='e')||(l=='i')||(l=='o')||(l=='u')||(l=='y')||(l=='A')||(l=='E')||(l=='I')||(l=='O')||(l=='U')||(l=='Y')){
+                c += l;
+            }
+        }
+        for (char l:subs2.toCharArray()){
+            if ((l=='a')||(l=='e')||(l=='i')||(l=='o')||(l=='u')||(l=='y')||(l=='A')||(l=='E')||(l=='I')||(l=='O')||(l=='U')||(l=='Y')){
+                k += l;
+            }
+        }
+        return c.equalsIgnoreCase(k);
+    }
+
+    public static boolean trouble(String a, String b) { // 4.9
+        char[] aChar = a.toCharArray();
+        char[] bChar = b.toCharArray();
+        boolean result = false;
+        int[] num1 = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        int[] num2 = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+        for (int i = 1; i < aChar.length; i++) {
+            if (aChar[i] == aChar[i-1]) {
+                num1[Character.getNumericValue(aChar[i])] += 1;
+            }
+        }
+        for (int i = 1; i < bChar.length; i++) {
+            if (bChar[i] == bChar[i-1]) {
+                num2[Character.getNumericValue(bChar[i])] += 1;
+            }
+        }
+        for (int i = 0; i < 10; i++) {
+            if (num1[i] == 2 && num2[i] == 1) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public static int countUniqueBooks(String a, String b) { // 4.10
+        if (b.length() == 1) {
+            String partA = a;
+            String[] parts = new String[0];
+            while (partA.length() != 0) {
+                int beginPart = partA.indexOf(b);
+                if (beginPart == -1) {
+                    break;
+                }
+                partA = partA.substring(beginPart + 1);
+                int endPart = partA.indexOf(b);
+                parts = Arrays.copyOf(parts, parts.length + 1);
+                parts[parts.length - 1] = partA.substring(0, endPart);
+                partA = partA.substring(endPart + 1);
+            }
+            String resStr = "";
+            for (String i: parts) {
+                resStr += i;
+            }
+            String lowerRes = resStr.toLowerCase();
+            boolean[] isItThere = new boolean[Character.MAX_VALUE];
+            for (int i = 0; i < lowerRes.length(); i++) {
+                isItThere[lowerRes.charAt(i)] = true;
+            }
+            int count = 0;
+            for (boolean value: isItThere) {
+                if (value) {
+                    count++;
+                }
+            }
+            return count;
+        }
+        else {
+            return -1;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
         Scanner sc = new Scanner(System.in);
@@ -233,6 +345,35 @@ public class Main {
                 System.out.println("bugger()");
                 int a6 = in.nextInt();
                 System.out.println("Результат: " + bugger(a6));
+            }
+            case 37 -> {
+                System.out.println("toStarShorthand()");
+                String a7 = sc.nextLine();
+                System.out.println("Результат: " + toStarShorthand(a7));
+            }
+            case 38 -> {
+                System.out.println("doesRhyme()");
+                System.out.println("Первая строка:");
+                String a8 = sc.nextLine();
+                System.out.println("Вторая строка:");
+                String b8 = sc.nextLine();
+                System.out.println("Результат: " + doesRhyme(a8, b8));
+            }
+            case 39 -> {
+                System.out.println("trouble()");
+                System.out.println("Введите первое число:");
+                String a9 = sc.nextLine();
+                System.out.println("Введите второе число:");
+                String b9 = sc.nextLine();
+                System.out.println("Результат: " + trouble(a9, b9));
+            }
+            case 40 -> {
+                System.out.println("countUniqueBooks()");
+                System.out.println("Введите строку:");
+                String a10 = sc.nextLine();
+                System.out.println("Введите символ:");
+                String b10 = sc.nextLine();
+                System.out.println("Результат: " + countUniqueBooks(a10, b10));
             }
         }
     }
