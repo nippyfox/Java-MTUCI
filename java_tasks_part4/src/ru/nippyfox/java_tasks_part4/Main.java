@@ -116,7 +116,7 @@ public class Main {
         int indexA = a.indexOf(' ');
         int indexB = b.indexOf(' ');
         String weightStr = a.substring(0, indexA);
-        String weightStep = a.substring(indexB + 1);
+        String weightStep = a.substring(indexA + 1);
         String heightStr = b.substring(0, indexB);
         String heightStep = b.substring(indexB + 1);
         float weight = Float.parseFloat(weightStr);
@@ -173,7 +173,7 @@ public class Main {
         while (i < a.length()) {
             if (a.charAt(i) == a.charAt(i - 1)) {
                 count++;
-                if (a.length() - 1 == i){
+                if (a.length() - 1 == i) {
                     res += a.charAt(i) + "*" + count;
                     break;
                 }
