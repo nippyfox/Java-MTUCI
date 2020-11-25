@@ -173,7 +173,7 @@ public class Main {
         while (i < a.length()) {
             if (a.charAt(i) == a.charAt(i - 1)) {
                 count++;
-                if (a.length() - 1 == 1){
+                if (a.length() - 1 == i){
                     res += a.charAt(i) + "*" + count;
                     break;
                 }
