@@ -69,12 +69,10 @@ public class Main {
     }
 
     public static boolean canComplete(String a, String b) { // 5.3
-        int lastSymPos = -1;
         for (char let: a.toCharArray()) {
-            int curSymPos = b.indexOf((int)let);
+            int curSymPos = b.indexOf(let);
             if ((curSymPos != -1)) {
-                lastSymPos = curSymPos;
-                b = b.substring(curSymPos+1, b.length());
+                b = b.substring(curSymPos+1);
             }
             else return false;
         }
