@@ -79,6 +79,22 @@ public class Main {
         return true;
     }
 
+    public static int sumDigProd(int[] arrOfNums) { // 5.4
+        int sum = 0;
+        for (int num: arrOfNums) {
+            sum += num;
+        }
+        while (sum / 10 != 0){
+            int allNumProd = 1;
+            String temp = Integer.toString(sum);
+            for (int i = 0; i < temp.length(); i++) {
+                allNumProd = Character.getNumericValue(temp.charAt(i)) * allNumProd;
+            }
+            sum = allNumProd;
+        }
+        return sum;
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in).useLocale(Locale.ENGLISH);
         Scanner sc = new Scanner(System.in);
@@ -129,6 +145,17 @@ public class Main {
                 System.out.println("Введите входную строку:");
                 String b3 = sc.nextLine();
                 System.out.println("Результат: " + canComplete(a3, b3));
+            }
+            case 44 -> {
+                System.out.println("sumDigProd()");
+                System.out.println("Сколько будет чисел?");
+                int a4 = in.nextInt();
+                int[] m4 = new int[a4];
+                for (int i = 0; i < a4; i++) {
+                    System.out.println("Введите " + (i+1) + " число: ");
+                    m4[i] = in.nextInt();
+                }
+                System.out.println("Результат: " + sumDigProd(m4));
             }
         }
     }
