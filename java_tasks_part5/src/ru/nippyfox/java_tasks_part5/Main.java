@@ -11,7 +11,7 @@ public class Main {
         int lastChar = 0;
         char[] charArray = a.toCharArray();
         for (int i = 0; i < charArray.length; i++) {
-            int charSym = (int) charArray[i];
+            int charSym = charArray[i];
             res[i] = charSym - lastChar;
             lastChar = charSym;
         }
@@ -19,14 +19,14 @@ public class Main {
     }
 
     public static String decrypt(int[] a) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         int lastCode = 0;
-        for (int i = 0; i < a.length; i++) {
-            char newAscii = (char) (lastCode + a[i]);
-            lastCode = lastCode + a[i];
-            res += String.valueOf(newAscii);
+        for (int j: a) {
+            char newAscii = (char) (lastCode + j);
+            lastCode = lastCode + j;
+            res.append(newAscii);
         }
-        return res;
+        return res.toString();
     }
 
     public static boolean canMove(String a, String bStr, String cStr) { // 5.2
