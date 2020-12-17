@@ -35,7 +35,7 @@ public class Main {
         if ((b.length == 2 && c.length == 2) && ((b[0] >= 'A' && b[0] <= 'H') || (b[0] >= 'a' && b[0] <= 'h')) &&
                 ((c[0] >= 'A' && c[0] <= 'H') || (c[0] >= 'a' && c[0] <= 'h')) && (b[1] >= '1' && b[1] <= '8')
                 && (c[1] >= '1' && c[1] <= '8')) {
-            if (a.trim().toLowerCase().equals("пешка")) {
+            if (a.trim().equalsIgnoreCase("пешка")) {
                 if (b[0] == c[0]) {
                     if (b[1] == '1') {
                         return false;
@@ -49,16 +49,16 @@ public class Main {
                 } else {
                     return false;
                 }
-            } else if (a.trim().toLowerCase().equals("конь")) {
+            } else if (a.trim().equalsIgnoreCase("конь")) {
                 return ((Math.abs((b[1] - c[1])) == 2 && Math.abs(b[0] - c[0]) == 1) ||
                         (Math.abs((b[0] - c[0])) == 2 && Math.abs(b[1] - c[1]) == 1));
-            } else if (a.trim().toLowerCase().equals("слон")) {
+            } else if (a.trim().equalsIgnoreCase("слон")) {
                 return (Math.abs(b[0] - c[0]) == Math.abs(b[1] - c[1]));
-            } else if (a.trim().toLowerCase().equals("ладья")) {
+            } else if (a.trim().equalsIgnoreCase("ладья")) {
                 return b[0] == c[0] || b[1] == c[1];
-            } else if (a.trim().toLowerCase().equals("ферзь")) {
+            } else if (a.trim().equalsIgnoreCase("ферзь")) {
                 return (b[0] == c[0] || b[1] == c[1]) || (Math.abs(b[0] - c[0]) == Math.abs(b[1] - c[1]));
-            } else if (a.trim().toLowerCase().equals("король")) {
+            } else if (a.trim().equalsIgnoreCase("король")) {
                 return ((b[0] == c[0]) && (b[1] + 1 == c[1]) || (b[1] == c[1]) && (b[0] + 1 == c[0]) ||
                         (b[0] == c[0]) && (b[1] - 1 == c[1]) || (b[1] == c[1]) && (b[0] - 1 == c[0]));
             } else {
@@ -124,7 +124,8 @@ public class Main {
                     }
                 }
             }
-            if (usedVowelsDefault.containsAll(usedVowelsCur) && usedVowelsCur.containsAll(usedVowelsDefault)) AnsWords.add(a[i]);
+            if (usedVowelsDefault.containsAll(usedVowelsCur) && usedVowelsCur.containsAll(usedVowelsDefault))
+                AnsWords.add(a[i]);
         }
         return AnsWords;
     }
